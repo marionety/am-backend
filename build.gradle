@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	// Lombok library
+	id "io.freefair.lombok" version "5.1.0"
+}
+
+group = 'com.mrc'
+version = '1.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.4.3'
+	runtime 'com.h2database:h2'
+}
+
+test {
+	useJUnitPlatform()
+}
